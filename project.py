@@ -1,3 +1,4 @@
+"""Extract information from research papers"""
 import nltk, re, pprint, string
 from nltk.corpus import stopwords
 
@@ -42,7 +43,7 @@ def leaves(tree):
 
 
 def normalize(word):
-    """Normalize words to lowercase and stem and lammatize."""
+    """Normalize words to lowercase and stem and lemmatize."""
     word = word.lower()
     word = stemmer.stem_word(word)
     word = lemmatizer.lemmatize(word)
@@ -50,7 +51,7 @@ def normalize(word):
 
 
 def acceptable(word):
-    """Check that the word is ling enough and not a stopword."""
+    """Check that the word is long enough and not a stopword."""
     return bool(2 <= len(word) <= 40 and word.lower() not in stopword)
 
 
